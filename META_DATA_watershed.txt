@@ -1,0 +1,93 @@
+mysql> desc MONITORING_POINT;
++--------------------+--------------+------+-----+---------+-------+
+| Field              | Type         | Null | Key | Default | Extra |
++--------------------+--------------+------+-----+---------+-------+
+| SITE_NAME          | varchar(45)  | NO   | PRI | NULL    |       |
+| SITE_POINT         | varchar(45)  | NO   | PRI | NULL    |       |
+| LOCATION_LATITUDE  | varchar(45)  | YES  |     | NULL    |       |
+| LOCATION_LONGITUDE | varchar(45)  | YES  |     | NULL    |       |
+| DESCRIPTION        | varchar(400) | YES  |     | NULL    |       |
+| SITE_USE           | varchar(45)  | YES  |     | NULL    |       |
++--------------------+--------------+------+-----+---------+-------+
+
+
+mysql> desc WATER_QUALITY;
++---------------------------------+-------------+------+-----+---------+-------+
+| Field                           | Type        | Null | Key | Default | Extra |
++---------------------------------+-------------+------+-----+---------+-------+
+| SAMPLE_DATE                     | date        | YES  |     | NULL    |       |
+| SAMPLED_BY                      | varchar(45) | YES  |     | NULL    |       |
+| SITE_CONDITION                  | varchar(45) | YES  |     | NULL    |       |
+| PH                              | varchar(45) | YES  |     | NULL    |       |
+| CONDUCTIVITY                    | varchar(45) | YES  |     | NULL    |       |
+| DISSOLVED_OXYGEN                | varchar(45) | YES  |     | NULL    |       |
+| TEMPERATURE                     | varchar(45) | YES  |     | NULL    |       |
+| TURBIDITY                       | varchar(45) | YES  |     | NULL    |       |
+| STAGE                           | varchar(45) | YES  |     | NULL    |       |
+| FECAL_COLIFORM                  | varchar(45) | YES  |     | NULL    |       |
+| E_COLI                          | varchar(45) | YES  |     | NULL    |       |
+| HARDNESS                        | varchar(45) | YES  |     | NULL    |       |
+| TOTAL_P                         | varchar(45) | YES  |     | NULL    |       |
+| TOTAL_N                         | varchar(45) | YES  |     | NULL    |       |
+| TSS                             | varchar(45) | YES  |     | NULL    |       |
+| ARSENIC                         | varchar(45) | YES  |     | NULL    |       |
+| COPPER                          | varchar(45) | YES  |     | NULL    |       |
+| LEAD                            | varchar(45) | YES  |     | NULL    |       |
+| ZINC                            | varchar(45) | YES  |     | NULL    |       |
+| 1,1,2,2-TETRACHLOROETHENE       | varchar(45) | YES  |     | NULL    |       |
+| 1,1,1-TRICHLOROETHANE           | varchar(45) | YES  |     | NULL    |       |
+| 1,1,2-TRICHLOROETHANE           | varchar(45) | YES  |     | NULL    |       |
+| 1,1-DICHLOROETHANE              | varchar(45) | YES  |     | NULL    |       |
+| 1,1-DICHLOROETHENE              | varchar(45) | YES  |     | NULL    |       |
+| 1,2-DICHLOROBENZENE             | varchar(45) | YES  |     | NULL    |       |
+| 1,2-DICHLOROETHANE              | varchar(45) | YES  |     | NULL    |       |
+| 1,2-DICHLOROPROPANE             | varchar(45) | YES  |     | NULL    |       |
+| 1,2-DIMETHYLBENZENE             | varchar(45) | YES  |     | NULL    |       |
+| 1,3-DICHLOROBENZENE             | varchar(45) | YES  |     | NULL    |       |
+| 1,4-DICHLOROBENZENE             | varchar(45) | YES  |     | NULL    |       |
+| 2-CHLOROETHYL_VINYL_ETHER       | varchar(45) | YES  |     | NULL    |       |
+| ACROLEIN                        | varchar(45) | YES  |     | NULL    |       |
+| ACRYLONITRILE                   | varchar(45) | YES  |     | NULL    |       |
+| BENZENE                         | varchar(45) | YES  |     | NULL    |       |
+| BROMODICHLOROMETHANE            | varchar(45) | YES  |     | NULL    |       |
+| BROMOFORM                       | varchar(45) | YES  |     | NULL    |       |
+| BROMOMETHANE                    | varchar(45) | YES  |     | NULL    |       |
+| CARBON_TETRACHLORIDE            | varchar(45) | YES  |     | NULL    |       |
+| CHLOROBENZENE                   | varchar(45) | YES  |     | NULL    |       |
+| CHLOROETHANE                    | varchar(45) | YES  |     | NULL    |       |
+| CHLOROFORM                      | varchar(45) | YES  |     | NULL    |       |
+| CHLOROMETHANE                   | varchar(45) | YES  |     | NULL    |       |
+| CIS-1,3-DICHLOROPROPENE         | varchar(45) | YES  |     | NULL    |       |
+| DIBROMOCHLOROMETHANE            | varchar(45) | YES  |     | NULL    |       |
+| ETHYLBENZENE                    | varchar(45) | YES  |     | NULL    |       |
+| METHYLENE_CHLORIDE              | varchar(45) | YES  |     | NULL    |       |
+| TETRACHLOROETHENE_PCE           | varchar(45) | YES  |     | NULL    |       |
+| TOLUENE                         | varchar(45) | YES  |     | NULL    |       |
+| TRANS-1,2-DICHLOROETHENE        | varchar(45) | YES  |     | NULL    |       |
+| TRANS-1,3-DICHLOROPROPENE       | varchar(45) | YES  |     | NULL    |       |
+| TRICHLOROETHENE_TCE             | varchar(45) | YES  |     | NULL    |       |
+| TRICHLOROFLUOROMETHANE_FREON_11 | varchar(45) | YES  |     | NULL    |       |
+| VINYL_CHLORIDE                  | varchar(45) | YES  |     | NULL    |       |
+| XYLENES_MP                      | varchar(45) | YES  |     | NULL    |       |
+| SITE_NAME                       | varchar(45) | YES  |     | NULL    |       |
+| SITE_POINT                      | varchar(45) | YES  |     | NULL    |       |
++---------------------------------+-------------+------+-----+---------+-------+
+
+##-- Foreign Key Constraint
+mysql> SELECT 
+  TABLE_NAME,COLUMN_NAME,CONSTRAINT_NAME, REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAME
+FROM
+  INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+WHERE
+  REFERENCED_TABLE_SCHEMA = 'watershed' AND
+  REFERENCED_TABLE_NAME = 'MONITORING_POINT';
++---------------+-------------+------------------+-----------------------+------------------------+
+| TABLE_NAME    | COLUMN_NAME | CONSTRAINT_NAME  | REFERENCED_TABLE_NAME | REFERENCED_COLUMN_NAME |
++---------------+-------------+------------------+-----------------------+------------------------+
+| WATER_QUALITY | SITE_NAME   | fk_sitenamepoint | MONITORING_POINT      | SITE_NAME              |
+| WATER_QUALITY | SITE_POINT  | fk_sitenamepoint | MONITORING_POINT      | SITE_POINT             |
++---------------+-------------+------------------+-----------------------+------------------------+
+
+
+
+
