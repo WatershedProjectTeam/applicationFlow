@@ -19,7 +19,7 @@ public class ConnectionBuilder {
 
 	public static Connection connect() {
 		String connectString = url + dbName;
-		System.out.println("getting a new connection");
+		// System.out.println("getting a new connection");
 		if (connection == null) {
 			// setting up driver
 

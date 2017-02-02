@@ -29,13 +29,13 @@
 </thead>
 <tbody>
 
-<c:forEach items="${MONITORINGPOINT}" var="monitoringPoint" varStatus="loop">
+<c:forEach items="${MONITORINGPOINTS}" var="monitoringPoint" varStatus="loop">
     <tr>
       <td><c:out value="${monitoringPoint.getSiteName()}" /></td>
       <td><c:out value="${monitoringPoint.getSitePoint()}"/></td>
       <td><c:out value="${monitoringPoint.getLatitude()}" /></td>
       <td><c:out value="${monitoringPoint.getLongitude()}" /></td>
-      <td><c:out value="${monitoringPoint.Description()}"/></td>
+      <td><c:out value="${monitoringPoint.getDescription()}"/></td>
       <td><c:out value="${monitoringPoint.getSiteUse()}" /></td>
       </tr>
       </c:forEach>

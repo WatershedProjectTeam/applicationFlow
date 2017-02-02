@@ -84,7 +84,7 @@ public class AddData extends HttpServlet {
 		String Copper = request.getParameter("Copper");
 		String Lead = request.getParameter("Lead");
 		String Zinc = request.getParameter("Zinc");
-		String Sitename = request.getParameter("Sitename");
+		String Sitename = request.getParameter("Site");
 		String Sitepoint = request.getParameter("Sitepoint");
 
 		// set up the water quality object
