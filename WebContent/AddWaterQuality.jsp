@@ -153,9 +153,11 @@
 
 
 <label> Site Name :</label>
-<input type = text name =Sitename value=""/>
-<br/>
-
+ <select id = Site name="Site">
+    <option value="Tanyard Creek"> Tanyard Creek</option>
+    <option value="Lilly Branch">Lilly Branch</option> 
+  </select>
+ 
 <label> Site Point :</label>
 <input type = text name= Sitepoint value=""/>
 

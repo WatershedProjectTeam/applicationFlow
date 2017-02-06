@@ -10,21 +10,21 @@ public class MonitoringPoint {
 	private String SiteUse;
 
 	/**
-	 * @param siteName
-	 * @param sitePoint
-	 * @param latitiude
-	 * @param longitute
-	 * @param description
-	 * @param siteUse
+	 * @param SiteName
+	 * @param SitePoint
+	 * @param Latitiude
+	 * @param Longitute
+	 * @param Description
+	 * @param SiteUse
 	 */
-	public MonitoringPoint(String siteName, String sitePoint, String latitude, String longitude, String description,
+	public MonitoringPoint(String siteName, String sitePoint, String Latitude, String Longitude, String escription,
 			String siteUse) {
-		SiteName = siteName;
-		SitePoint = sitePoint;
-		Latitude = latitude;
-		Longitude = longitude;
-		Description = description;
-		SiteUse = siteUse;
+		this.SiteName = siteName;
+		this.SitePoint = sitePoint;
+		this.Latitude = Latitude;
+		this.Longitude = Longitude;
+		this.Description = Description;
+		this.SiteUse = SiteUse;
 	}
 
 	public MonitoringPoint() {
