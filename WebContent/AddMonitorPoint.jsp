@@ -35,7 +35,7 @@
 
   <body>
   <div id="navbar">
-  <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
+  <div id="custom-bootstrap-menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header"><a class="navbar-brand" href="#">Watershed UGA Data Management</a>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-menubuilder"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
@@ -43,13 +43,21 @@
         </div>
         <div class="collapse navbar-collapse navbar-menubuilder">
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="/">Home</a>
+                <li><a href="HomePage.html">Home</a>
                 </li>
-                <li><a href="viewData">View Data</a>
+                <li><a href="viewData" >View Data</a>
+                	
                 </li>
+                <li class="dropdown"> <a href="addData" data-toggle="dropdown" class="dropdown-toggle">Add Data<b class="caret"></b></a>
+                	<ul class="dropdown-menu">
+            		<li><a href="addData">Add Water Quality Data</a></li>
+           			<li><a href="AddMonitorPoint.jsp">Add Monitoring Point</a></li>
+        			</ul>
+                </li>
+           
                 <li><a href="https://watershed.uga.edu/">Watershed UGA</a>
                 </li>
-                <li><a href="/about-us">Login</a>
+                <li><a href="Login.jsp">Login</a>
                 </li>
             </ul>
         </div>
@@ -59,17 +67,16 @@
  <div class="header-image">
 	<p><img src="trailcreek.jpg" width="100%" height="auto"></p>
  </div>
-</div>
-
-    <div class="container">
+    
 
       <div id="heading" class="page">
         <h1> Add Monitoring Point Information</h1>
-        <p>Faculty, staff and students have been collecting data on UGA's streams.Please use the below form to enter Monitoring Pint data to the database
+        <p>Faculty, staff and students have been collecting data on UGA's streams.<br> Please use the below form to enter Monitoring Pint data to the database
          </p><br>
       </div>
       
-     <div class ="form">
+     <div class ="addform">
+
 
 <form  name=addForm action=addMonitor method=post>
 
@@ -85,7 +92,7 @@
 <input type = text name= Latitude value=""/>
 <br/>
 
-<label> Location - Longitutde :</label>
+<label> Location - Longitude :</label>
 <input type = text name= Longitude value=""/>
 <br/>
 
@@ -100,20 +107,20 @@
 <input type =submit name =submit value="Add Data"/>
 </form>
 
-    </div><!-- /.container -->
+   
     
-   <div id="veiw">
+   <!-- <div id="veiw">
 				<input class ="button" type="button" value="View Data">
 				<input class ="button" type="button" value="Watershed UGA HomePage">
 				</div>
 				<div id="login">
 				<br><input class ="button" type="button" value="Login"><br>
-				</div>
+				</div> -->
 			
 	</div><!-- /end .section.body -->
 	
 	<div class="footer">
-		<p>Watershed UGA 2017 <br><img src="georgia.png" alt="" width="70px" height="auto" /> </br></p>
+		<p>Watershed UGA 2017 <br><img src="georgia.png" alt="" width="70px" height="auto" /> <br></p>
 		
 	</div>	
 
@@ -132,4 +139,4 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
 </html>
-</head>
+
