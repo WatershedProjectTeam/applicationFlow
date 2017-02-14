@@ -1,6 +1,8 @@
 package controllers;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.Servlet;
@@ -12,6 +14,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dbhelpers.AddQuery;
+import dbhelpers.ViewQuery;
+import model.MonitoringPoint;
 import model.WaterQuality;
 
 /**
@@ -53,7 +57,15 @@ public class AddData extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String url = "AddWaterQuality.jsp";
+		ViewQuery viewQuery = new ViewQuery();
+		try {
+			List<MonitoringPoint> monitoringPoints = viewQuery.getMonitoringPointSiteNames();
 
+			request.setAttribute("MONITORINGPOINTS", monitoringPoints);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(url);
 		dispatcher.forward(request, response);
 	}
@@ -84,6 +96,41 @@ public class AddData extends HttpServlet {
 		String Copper = request.getParameter("Copper");
 		String Lead = request.getParameter("Lead");
 		String Zinc = request.getParameter("Zinc");
+		String TETRACHLOROETHENE = request.getParameter("TETRACHLOROETHENE");
+		String TRICHLOROETHANE = request.getParameter("TRICHLOROETHANE");
+		String TRICHLOROETHANEa = request.getParameter("TRICHLOROETHANEa");
+		String DICHLOROETHANE = request.getParameter("DICHLOROETHAN");
+		String DICHLOROETHENEa = request.getParameter("DICHLOROETHENEa");
+		String DICHLOROBENZENE = request.getParameter("DICHLOROBENZENE");
+		String DICHLOROETHANEa = request.getParameter("DICHLOROETHANEa");
+		String DICHLOROPROPANE = request.getParameter("DICHLOROPROPANE");
+		String DIMETHYLBENZENEa = request.getParameter("DIMETHYLBENZENEa");
+		String DICHLOROBENZENEb = request.getParameter("DICHLOROBENZENEb");
+		String DICHLOROBENZENEc = request.getParameter("DICHLOROBENZENEc");
+		String CHLOROETHYLVINYLETHER = request.getParameter("CHLOROETHYLVINYLETHER");
+		String ACROLEIN = request.getParameter("ACROLEIN");
+		String ACRYLONITRILE = request.getParameter("ACRYLONITRILE");
+		String BENZENE = request.getParameter("BENZENE");
+		String BROMODICHLOROMETHANE = request.getParameter("BROMODICHLOROMETHANE");
+		String BROMOFORM = request.getParameter("BROMOFORM");
+		String BROMOMETHANE = request.getParameter("BROMOMETHANE");
+		String CARBONTETRACHLORIDE = request.getParameter("CARBONTETRACHLORIDE");
+		String CHLOROBENZENE = request.getParameter("CHLOROBENZENE");
+		String CHLOROETHANEa = request.getParameter("CHLOROETHANEa");
+		String CHLOROFORM = request.getParameter("CHLOROFORM");
+		String CHLOROMETHANE = request.getParameter("CHLOROMETHANE");
+		String CISDICHLOROPROPENE = request.getParameter("CISDICHLOROPROPENE");
+		String DIBROMOCHLOROMETHANE = request.getParameter("DIBROMOCHLOROMETHANE");
+		String ETHYLBENZENE = request.getParameter("ETHYLBENZENE");
+		String METHYLENECHLORIDE = request.getParameter("METHYLENECHLORIDE");
+		String TETRACHLOROETHENEPCE = request.getParameter("TETRACHLOROETHENEPCE");
+		String TOLUENE = request.getParameter("TOLUENE");
+		String TRANSDICHLOROETHENEa = request.getParameter("TRANSDICHLOROETHENEa");
+		String TRANSDICHLOROPROPENEb = request.getParameter("TRANSDICHLOROPROPENEb");
+		String TRICHLOROETHENETCE = request.getParameter("TRICHLOROETHENETCE");
+		String TRICHLOROFLUOROMETHANEFREON = request.getParameter("TRICHLOROFLUOROMETHANEFREON");
+		String VINYLCHLORIDE = request.getParameter("VINYLCHLORIDE");
+		String XYLENESMP = request.getParameter("XYLENESMP");
 		String Sitename = request.getParameter("Site");
 		String Sitepoint = request.getParameter("Sitepoint");
 
@@ -112,6 +159,40 @@ public class AddData extends HttpServlet {
 		waterQuality.setCopper(Copper);
 		waterQuality.setLead(Lead);
 		waterQuality.setZinc(Zinc);
+		waterQuality.setTETRACHLOROETHENE(TETRACHLOROETHENE);
+		waterQuality.setTRICHLOROETHANEa(TRICHLOROETHANEa);
+		waterQuality.setDICHLOROETHANE(DICHLOROETHANE);
+		waterQuality.setDICHLOROETHENEa(DICHLOROETHENEa);
+		waterQuality.setDICHLOROBENZENE(DICHLOROBENZENE);
+		waterQuality.setDICHLOROETHANEa(DICHLOROETHANEa);
+		waterQuality.setDICHLOROPROPANE(DICHLOROPROPANE);
+		waterQuality.setDIMETHYLBENZENEa(DIMETHYLBENZENEa);
+		waterQuality.setDICHLOROBENZENEb(DICHLOROBENZENEb);
+		waterQuality.setDICHLOROBENZENEc(DICHLOROBENZENEc);
+		waterQuality.setCHLOROETHYLVINYLETHER(CHLOROETHYLVINYLETHER);
+		waterQuality.setACROLEIN(ACROLEIN);
+		waterQuality.setACRYLONITRILE(ACRYLONITRILE);
+		waterQuality.setBENZENE(BENZENE);
+		waterQuality.setBROMODICHLOROMETHANE(BROMODICHLOROMETHANE);
+		waterQuality.setBROMOFORM(BROMOFORM);
+		waterQuality.setBROMOMETHANE(BROMOMETHANE);
+		waterQuality.setCARBONTETRACHLORIDE(CARBONTETRACHLORIDE);
+		waterQuality.setCHLOROBENZENE(CHLOROBENZENE);
+		waterQuality.setCHLOROETHANEa(CHLOROETHANEa);
+		waterQuality.setCHLOROFORM(CHLOROFORM);
+		waterQuality.setCHLOROMETHANE(CHLOROMETHANE);
+		waterQuality.setCISDICHLOROPROPENE(CISDICHLOROPROPENE);
+		waterQuality.setDIBROMOCHLOROMETHANE(DIBROMOCHLOROMETHANE);
+		waterQuality.setETHYLBENZENE(ETHYLBENZENE);
+		waterQuality.setMETHYLENECHLORIDE(METHYLENECHLORIDE);
+		waterQuality.setTETRACHLOROETHENEPCE(TETRACHLOROETHENEPCE);
+		waterQuality.setTOLUENE(TOLUENE);
+		waterQuality.setTRANSDICHLOROETHENEa(TRANSDICHLOROETHENEa);
+		waterQuality.setTRANSDICHLOROPROPENEb(TRANSDICHLOROPROPENEb);
+		waterQuality.setTRICHLOROETHENETCE(TRICHLOROETHENETCE);
+		waterQuality.setTRICHLOROFLUOROMETHANEFREON(TRICHLOROFLUOROMETHANEFREON);
+		waterQuality.setVINYLCHLORIDE(VINYLCHLORIDE);
+		waterQuality.setXYLENES_MP(XYLENESMP);
 		waterQuality.setSitename(Sitename);
 		waterQuality.setSitepoint(Sitepoint);
 
@@ -127,3 +208,4 @@ public class AddData extends HttpServlet {
 	}
 
 }
+
