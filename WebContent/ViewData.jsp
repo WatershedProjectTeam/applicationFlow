@@ -39,12 +39,46 @@
 <th>Copper</th>
 <th>Lead</th>
 <th>Zinc</th>
+<th>TETRACHLOROETHENE</th>
+<th>TRICHLOROETHANEa </th>
+ <th>DICHLOROETHANE</th>
+<th>DICHLOROETHENEa</th>
+<th>DICHLOROBENZENE</th>
+<th>DICHLOROETHANEa</th>
+<th>DICHLOROPROPANE</th>
+<th>DIMETHYLBENZENEa</th>
+<th>DICHLOROBENZENEb</th>
+<th>DICHLOROBENZENEc</th>
+<th>ACROLEIN</th>
+<th>ACRYLONITRILE</th>
+<th>BENZENE</th>
+<th>BROMODICHLOROMETHANE</th>
+<th>BROMOFORM</th>
+<th>BROMOMETHANE</th>
+<th>CARBONTETRACHLORIDE</th>
+<th>CHLOROBENZENE</th>
+<th>CHLOROETHANEa</th>
+<th>CHLOROFORM</th>
+<th>CHLOROMETHANE</th>
+<th>CISDICHLOROPROPENE</th>
+<th>DIBROMOCHLOROMETHANE</th>
+<th>ETHYLBENZENE</th>
+<th>METHYLENECHLORIDE</th>
+<th>TETRACHLOROETHENEPCE</th>
+<th>TOLUENE</th>
+<th>TRANSDICHLOROETHENEa</th>
+<th>TRANSDICHLOROPROPENEb</th>
+<th>TRICHLOROETHENETCE</th>
+<th>TRICHLOROFLUOROMETHANEFREON</th>
+<th>VINYLCHLORIDE</th>
+<th>XYLENESMP</th>
+
 <th>Site Name</th>
 <th>Site Point</th>
 </thead>
 <tbody>  <c:forEach items="${WATERQUALITIES}" var="waterQuality" varStatus="loop">
     <tr>
-      <td><c:out value="${waterQuality.getSampleDate()}" /></td>
+      <td><c:out value="${waterQuality.getSampleDate()}" /></td> 
       <td><c:out value="${waterQuality.getSampledBy()}" /></td>
       <td><c:out value="${waterQuality.getSiteCondition()}" /></td>
       <td><c:out value="${waterQuality.getPH()}" /></td>
@@ -63,11 +97,48 @@
       <td><c:out value="${waterQuality.getCopper()}" /></td>
       <td><c:out value="${waterQuality.getLead()}" /></td>
       <td><c:out value="${waterQuality.getZinc()}" /></td>
-      <td><c:out value="${waterQuality.getSitename()}" /></td>
-      <td><c:out value="${waterQuality.getSitepoint()}" /></td>
+      <td><c:out value="${waterQuality.getTETRACHLOROETHENE()}" /></td>
+	<td><c:out value="${waterQuality.getTRICHLOROETHANE()}" /></td>
+	<td><c:out value="${waterQuality.getTRICHLOROETHANEa()}" /></td>
+	<td><c:out value="${waterQuality.getDICHLOROETHANE()}" /></td>
+	<td><c:out value="${waterQuality.getDICHLOROETHENEa()}" /></td>
+	<td><c:out value="${waterQuality.getDICHLOROBENZENE()}" /></td>
+	<td><c:out value="${waterQuality.getDICHLOROETHANEa()}" /></td>
+	<td><c:out value="${waterQuality.getDICHLOROPROPANE()}" /></td>
+	<td><c:out value="${waterQuality.getDIMETHYLBENZENEa()}" /></td>
+	<td><c:out value="${waterQuality.getDICHLOROBENZENEb()}" /></td>
+	<td><c:out value="${waterQuality.getDICHLOROBENZENEc()}" /></td>
+	<td><c:out value="${waterQuality.getCHLOROETHYLVINYLETHER()}" /></td>
+	<td><c:out value="${waterQuality.getACROLEIN()}" /></td>
+	<td><c:out value="${waterQuality.getACRYLONITRILE()}" /></td>
+	<td><c:out value="${waterQuality.getBENZENE()}" /></td>
+	<td><c:out value="${waterQuality.getBROMODICHLOROMETHANE()}" /></td>
+	<td><c:out value="${waterQuality.getBROMOFORM()}" /></td>
+	<td><c:out value="${waterQuality.getBROMOMETHANE()}" /></td>
+	<td><c:out value="${waterQuality.getCARBONTETRACHLORIDE()}" /></td>
+	<td><c:out value="${waterQuality.getCHLOROBENZENE()}" /></td>
+	<td><c:out value="${waterQuality.getCHLOROETHANEa()}" /></td>
+	<td><c:out value="${waterQuality.getCHLOROFORM()}" /></td>
+	<td><c:out value="${waterQuality.getCHLOROMETHANE()}" /></td>
+	<td><c:out value="${waterQuality.getCISDICHLOROPROPENE()}" /></td>
+	<td><c:out value="${waterQuality.getDIBROMOCHLOROMETHANE()}" /></td>
+	<td><c:out value="${waterQuality.getETHYLBENZENE()}" /></td>
+	<td><c:out value="${waterQuality.getMETHYLENECHLORIDE()}" /></td>
+	<td><c:out value="${waterQuality.getTETRACHLOROETHENE()}" /></td>
+	<td><c:out value="${waterQuality.getTOLUENE()}" /></td>
+	<td><c:out value="${waterQuality.getTRANSDICHLOROETHENEa()}" /></td>
+	<td><c:out value="${waterQuality.getTRANSDICHLOROPROPENEb()}" /></td>
+	<td><c:out value="${waterQuality.getTRICHLOROETHENETCE()}" /></td>
+	<td><c:out value="${waterQuality.getTRICHLOROFLUOROMETHANEFREON()}" /></td>
+	<td><c:out value="${waterQuality.getVINYLCHLORIDE()}" /></td>
+	<td><c:out value="${waterQuality.getXYLENES_MP()}" /></td>
+	 <td><c:out value="${waterQuality.getSitename()}" /></td>
+	 <td><c:out value="${waterQuality.getSitepoint()}" /></td>
     </tr>
   </c:forEach></tbody>
 </table>
+
+
 
 </body>
 </html>
