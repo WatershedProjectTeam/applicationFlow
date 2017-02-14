@@ -65,12 +65,12 @@ public class AddMonitor extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String SiteName = request.getParameter("SiteName");
-		String SitePoint = request.getParameter("SitePoint");
+		String SiteName = request.getParameter("Sitename");
+		String SitePoint = request.getParameter("Sitepoint");
 		String Latitude = request.getParameter("Latitude");
 		String Longitude = request.getParameter("Longitude");
 		String Description = request.getParameter("Description");
-		String SiteUse = request.getParameter("SiteUse");
+		String SiteUse = request.getParameter("Siteuse");
 
 		// set up the monitoringPoint object
 
