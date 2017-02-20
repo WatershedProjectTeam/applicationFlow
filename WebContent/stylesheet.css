@@ -114,6 +114,7 @@ table {
 	border-color: #34699A;
 	width: 100%;
 	margin: 10px;
+	
 }
 th{
 	border: 3px; 
@@ -143,9 +144,9 @@ tr:hover {background-color: #65C6C4}
 
 
 #table {
-	overflow-x:auto;
-	
+	overflow-x: auto;
 }
+
 
 .loginform {
 	
@@ -200,9 +201,19 @@ tr:hover {background-color: #65C6C4}
 	border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+	width: 680px;
+	margin: auto;
+}
+
+.addmonitorform {
+		
+	border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 15px;
 	width: 360px;
 	margin: auto;
 }
+
 
 .addform input[type=submit] {
 	border: 1px solid #113F67;
@@ -229,6 +240,40 @@ tr:hover {background-color: #65C6C4}
 	
 }
 
+.addmonitorform input[type=submit] {
+	border: 1px solid #113F67;
+   background: #408AB4;
+   background: -webkit-gradient(linear, left top, left bottom, from(#113F67), to(#408AB4));
+   background: -webkit-linear-gradient(top, #113F67, #408AB4);
+   background: -moz-linear-gradient(top, #113F67, #408AB4);
+   background: -ms-linear-gradient(top, #113F67, #408AB4);
+   background: -o-linear-gradient(top, #113F67, #408AB4);
+   background-image: -ms-linear-gradient(top, #113F67 0%, #408AB4 100%);
+   padding: 9px 12px;
+   -webkit-border-radius: 8px;
+   -moz-border-radius: 8px;
+   border-radius: 8px;
+   -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
+   text-shadow: #000000 0 1px 0;
+   color: #ffffff;
+   font-size: 15px;
+   font-family: helvetica, serif;
+   text-decoration: none;
+   vertical-align: middle;
+	
+}
+
+.addbutton {
+	
+	padding-top: 10px;
+}
+
+.formline {
+	
+	padding: 5px;
+}
 
 .body {
 	
@@ -312,4 +357,6 @@ tr:hover {background-color: #65C6C4}
    	font-size:10px;
    	
    }
+
+
 
