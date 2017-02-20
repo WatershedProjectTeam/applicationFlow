@@ -3,7 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="utf-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -45,8 +45,11 @@
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="HomePage.html">Home</a>
                 </li>
-                <li><a href="viewData" >View Data</a>
-                	
+                <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle">View Data<b class="caret"></b></a>
+                	<ul class="dropdown-menu">
+            		<li><a href="viewData">View Water Quality Data</a></li>
+           			<li><a href="viewMonitor">View Monitoring Point Data</a></li>
+        			</ul>
                 </li>
                 <li class="dropdown"> <a href="addData" data-toggle="dropdown" class="dropdown-toggle">Add Data<b class="caret"></b></a>
                 	<ul class="dropdown-menu">
@@ -71,40 +74,48 @@
 
       <div id="heading" class="page">
         <h1> Add Monitoring Point Information</h1>
-        <p>Faculty, staff and students have been collecting data on UGA's streams.<br> Please use the below form to enter Monitoring Pint data to the database
+        <p>Faculty, staff and students have been collecting data on UGA's streams.<br> Please use the below form to enter Monitoring Pint data to the database.
          </p><br>
       </div>
       
-     <div class ="addform">
-
+     <div class ="addmonitorform">
 
 <form  name=addForm action=addMonitor method=post>
-
+<div >
+<div class = "formline">
 <label> Site Name :</label>
 <input type = text name =Sitename value=""/>
-<br/>
+</div>
 
+<div class = "formline" >
 <label> Site Point :</label>
 <input type = text name= Sitepoint value=""/>
-<br/>
+</div>
 
+<div class = "formline">
 <label> Location - Latitude :</label>
 <input type = text name= Latitude value=""/>
-<br/>
+</div>
 
+<div class = "formline">
 <label> Location - Longitude :</label>
 <input type = text name= Longitude value=""/>
-<br/>
+</div>
 
+<div class = "formline">
 <label> Description :</label>
 <input type = text name= Description value=""/>
-<br/>
+</div>
 
+<div class = "formline">
 <label> Site Use :</label>
 <input type = text name= Siteuse value=""/>
-<br/>
+</div>
 
+</div>
+<div class = "addbutton">
 <input type =submit name =submit value="Add Data"/>
+</div>
 </form>
 
    
@@ -116,11 +127,11 @@
 				<div id="login">
 				<br><input class ="button" type="button" value="Login"><br>
 				</div> -->
-			
-	</div><!-- /end .section.body -->
+</div>			
+	
 	
 	<div class="footer">
-		<p>Watershed UGA 2017 <br><img src="georgia.png" alt="" width="70px" height="auto" /> <br></p>
+		<p>Watershed UGA 2017 <br><img src="georgia.png" alt="" width="70px" height="auto" /> </br></p>
 		
 	</div>	
 
@@ -139,4 +150,6 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
 </html>
+</head>
+
 
