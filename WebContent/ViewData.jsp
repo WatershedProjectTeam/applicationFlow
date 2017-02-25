@@ -71,6 +71,8 @@
 <table>
 <thead>
 <tr>
+<th>Update</th>
+<th>Delete</th>
 <th>Sample Date</th>
 <th>Sampled By</th>
 <th>Site Condition</th>
@@ -130,26 +132,41 @@
 </thead>
 <tbody>  <c:forEach items="${WATERQUALITIES}" var="waterQuality" varStatus="loop">
     <tr>
-      <td><c:out value="${waterQuality.getSampleDate()}" /></td>
-      <td><c:out value="${waterQuality.getSampledBy()}" /></td>
-      <td><c:out value="${waterQuality.getSiteCondition()}" /></td>
-      <td><c:out value="${waterQuality.getPH()}" /></td>
-      <td><c:out value="${waterQuality.getConductivity()}" /></td>
-      <td><c:out value="${waterQuality.getDissolvedOxygen()}" /></td>
-      <td><c:out value="${waterQuality.getTemperature()}" /></td>
-      <td><c:out value="${waterQuality.getTurbidity()}" /></td>
-      <td><c:out value="${waterQuality.getStage()}" /></td>
-      <td><c:out value="${waterQuality.getFecalColiform()}" /></td>
-      <td><c:out value="${waterQuality.getEcoli()}" /></td>
-      <td><c:out value="${waterQuality.getHardness()}" /></td>
-      <td><c:out value="${waterQuality.getTotalP()}" /></td>
-      <td><c:out value="${waterQuality.getTotaln()}" /></td>
-      <td><c:out value="${waterQuality.getTss()}" /></td>
-      <td><c:out value="${waterQuality.getArsenic()}" /></td>
-      <td><c:out value="${waterQuality.getCopper()}" /></td>
-      <td><c:out value="${waterQuality.getLead()}" /></td>
-      <td><c:out value="${waterQuality.getZinc()}" /></td>
-      <td><c:out value="${waterQuality.getTETRACHLOROETHENE()}" /></td>
+
+    <td>
+        <a href=<c:url value="updateGetData">
+            <c:param name="SampleDate" value="${waterQuality.getSampleDate()}"/>
+            <c:param name="SitePoint"  value="${waterQuality.getSitepoint()}"/>
+        </c:url>><button type="button" >Update</button></a>
+	</td>
+
+    <td>
+        <a href=<c:url value="DeleteData">
+            <c:param name="SampleDate" value="${waterQuality.getSampleDate()}"/>
+            <c:param name="SitePoint"  value="${waterQuality.getSitepoint()}"/>
+        </c:url>><button type="button" onclick="return confirm('Are you sure you want to delete?');">Delete</button></a>
+	</td>    
+    
+    <td><c:out value="${waterQuality.getSampleDate()}" /></td>
+    <td><c:out value="${waterQuality.getSampledBy()}" /></td>
+    <td><c:out value="${waterQuality.getSiteCondition()}" /></td>
+    <td><c:out value="${waterQuality.getPH()}" /></td>
+    <td><c:out value="${waterQuality.getConductivity()}" /></td>
+    <td><c:out value="${waterQuality.getDissolvedOxygen()}" /></td>
+    <td><c:out value="${waterQuality.getTemperature()}" /></td>
+    <td><c:out value="${waterQuality.getTurbidity()}" /></td>
+    <td><c:out value="${waterQuality.getStage()}" /></td>
+    <td><c:out value="${waterQuality.getFecalColiform()}" /></td>
+    <td><c:out value="${waterQuality.getEcoli()}" /></td>
+    <td><c:out value="${waterQuality.getHardness()}" /></td>
+    <td><c:out value="${waterQuality.getTotalP()}" /></td>
+    <td><c:out value="${waterQuality.getTotaln()}" /></td>
+    <td><c:out value="${waterQuality.getTss()}" /></td>
+    <td><c:out value="${waterQuality.getArsenic()}" /></td>
+    <td><c:out value="${waterQuality.getCopper()}" /></td>
+    <td><c:out value="${waterQuality.getLead()}" /></td>
+    <td><c:out value="${waterQuality.getZinc()}" /></td>
+    <td><c:out value="${waterQuality.getTETRACHLOROETHENE()}" /></td>
 	<td><c:out value="${waterQuality.getTRICHLOROETHANE()}" /></td>
 	<td><c:out value="${waterQuality.getTRICHLOROETHANEa()}" /></td>
 	<td><c:out value="${waterQuality.getDICHLOROETHANE()}" /></td>
@@ -184,8 +201,8 @@
 	<td><c:out value="${waterQuality.getTRICHLOROFLUOROMETHANEFREON()}" /></td>
 	<td><c:out value="${waterQuality.getVINYLCHLORIDE()}" /></td>
 	<td><c:out value="${waterQuality.getXYLENES_MP()}" /></td>
-      <td><c:out value="${waterQuality.getSitename()}" /></td>
-      <td><c:out value="${waterQuality.getSitepoint()}" /></td>
+    <td><c:out value="${waterQuality.getSitename()}" /></td>
+    <td><c:out value="${waterQuality.getSitepoint()}" /></td>
     </tr>
   </c:forEach></tbody>
 </table>

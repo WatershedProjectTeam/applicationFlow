@@ -64,19 +64,22 @@
 	<p><img src="trailcreek.jpg" width="100%" height="auto" ></p>
  </div>
  <div id="heading" class="page">
-	<h1> ${sessionScope.name} View Data </h1>
+	<h1> ${sessionScope.name} View Monitoring Point Data </h1>
 </div>	
 	<br>
 	
 <br>
 
-<div class = "table-responsive">	
+<div class = "table-responsive">
+<form name=updateForm action=DeleteDataMP method=post>
 <table>
 <thead>
 <tr>
+<th>Update</th>
+<th>Delete</th>
 <th>Site Name</th>
 <th>Site Point</th>
-<th>Location- Latitude</th>
+<th>Location-Latitude</th>
 <th>Location-Longtitude</th>
 <th>Description</th>
 <th>Site Use</th>
@@ -85,17 +88,34 @@
 
 <c:forEach items="${MONITORINGPOINTS}" var="monitoringPoint" varStatus="loop">
     <tr>
-      <td><c:out value="${monitoringPoint.getSiteName()}" /></td>
-      <td><c:out value="${monitoringPoint.getSitePoint()}"/></td>
-      <td><c:out value="${monitoringPoint.getLatitude()}" /></td>
-      <td><c:out value="${monitoringPoint.getLongitude()}" /></td>
-      <td><c:out value="${monitoringPoint.getDescription()}"/></td>
-      <td><c:out value="${monitoringPoint.getSiteUse()}" /></td>
-      </tr>
-      </c:forEach>
 
+    <td>
+        <a href=<c:url value="updateGetMP">
+            <c:param name="SiteName" value="${monitoringPoint.getSiteName()}"/>
+            <c:param name="SitePoint" value="${monitoringPoint.getSitePoint()}"/>
+         </c:url>><button type="button">Update</button></a>
+	</td>
+
+    <td>
+        <a href=<c:url value="DeleteDataMP">
+            <c:param name="SiteName" value="${monitoringPoint.getSiteName()}"/>
+            <c:param name="SitePoint" value="${monitoringPoint.getSitePoint()}"/>
+         </c:url>><button type="button" onclick="return confirm('Are you sure you want to delete?');">Delete</button></a>
+	</td>
+  
+      	<td><c:out value="${monitoringPoint.getSiteName()}" /></td>
+      	<td><c:out value="${monitoringPoint.getSitePoint()}"/></td>
+      	<td><c:out value="${monitoringPoint.getLatitude()}" /></td>
+      	<td><c:out value="${monitoringPoint.getLongitude()}" /></td>
+      	<td><c:out value="${monitoringPoint.getDescription()}"/></td>
+      	<td><c:out value="${monitoringPoint.getSiteUse()}" /></td>
+	</tr>
+</c:forEach>
+ 
 </tbody>
 </table>
+</form> 	
+
 </div>
 <div class="footer">
 		<p>Watershed UGA 2017 <br><img src="georgia.png" alt="" width="70px" height="auto" /> <br></p>
