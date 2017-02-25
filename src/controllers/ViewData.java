@@ -64,12 +64,12 @@ public class ViewData extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String url = "ViewData.jsp";
-
+		
 		ViewQuery viewQuery = new ViewQuery();
 		try {
 			List<WaterQuality> waterQualities = viewQuery.getWaterQualities();
 			/*
-			 * System.out.println(waterQuality.getSampleDate());
+			 System.out.println(waterQuality.getSampleDate());			 
 			 * System.out.println(waterQuality.getSampledBy());
 			 * System.out.println(waterQuality.getSiteCondition());
 			 */
