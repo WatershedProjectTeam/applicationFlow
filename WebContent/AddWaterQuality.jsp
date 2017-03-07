@@ -26,9 +26,7 @@
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js" 
- 	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="	  
-	crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -361,39 +359,37 @@
 <div class="col-xs-6 form-group">
 <label> Site Name :</label>
  <select  class="form-control" id="siteNameOptions" name= Site >
+ 	<option Value = "null"> Please Select a Value</option>
 <c:forEach items="${MONITORINGPOINTS}" var="monitoringPoint" varStatus="loop">
-	<option Value = "${monitoringPoint.getSiteName() }"> ${monitoringPoint.getSiteName() }</option>
+	<option Value = "${monitoringPoint.getSiteName()}">${monitoringPoint.getSiteName()}</option>
   </c:forEach>
 </select>
   <br/>
-<script type="text/javascript">
-$(document).on("onchange", "#siteNameOptions", function() {  // When HTML DOM "click" event is invoked on element with ID "somebutton", execute the following function...
-    $.get("sitePoints?siteName=Tanyard Creek", function(responseJson) {    // Execute Ajax GET request on URL of "someservlet" and execute the following function with Ajax response JSON...
-      //  var $ul = $("<option value='").appendTo($("#sitePointOptions")); // Create HTML <ul> element and append it to HTML DOM element with ID "somediv".
-        $.each(responseJson, function(index, item) { // Iterate over the JSON array.
-            $("<option>").text(item).appendTo($("#sitePointOptions"));      // Create HTML <li> element, set its text content with currently iterated item and append it to the <ul>.
-        });
+</div>
+
+<script>
+$(document).ready(function(){
+    $("#siteNameOptions").change(function(){
+        $.ajax({url: "sitePoints?siteName="+$("#siteNameOptions option:selected").text(), dataType: 'json', success: function(sitePointsJson){
+        	var sitePointOptions = '';
+        	$('#sitePointOptions').find('option').remove().end();
+        	$.each(sitePointsJson, function() {
+        		$('#sitePointOptions').append($('<option>', { 
+        	        value: this,
+        	        text : this 
+        	    }));
+            });
+        	
+        }});
     });
 });
 </script>
-</div>
+
 
 <div class="col-xs-6 form-group">
 <label> Site Point :</label>
 <select  class="form-control" id="sitePointOptions" name= "Sitepoint" >
-<option value ="MP-3" > MP-3 </option>
-<option value ="MP-10" > MP-10 </option>
-<option value ="MP-8" > MP-8 </option>
-<option value ="MS4-2" > MS4-2 </option>
-<option value ="MS4-3" > MS4-3 </option>
-<option value ="MS4-4b" > MS4-4b </option>
-<option value ="MS4-4c">MS4-4c </option>
-<option value ="MS4-8">MS4-8 </option>
-<option value ="MP-1">MP-1 </option>
-<option value ="MP-6">MP-6 </option>
-<option value ="TestP1">TestP1 </option>
-
-		
+<option value ="null" >Please select a Site Point first</option>
 </select>
 </div>
 
@@ -425,5 +421,6 @@ $(document).on("onchange", "#siteNameOptions", function() {  // When HTML DOM "c
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </body>
 </html>
+
 
 
