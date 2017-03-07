@@ -47,3 +47,4 @@ public class SitePoints extends HttpServlet {
 	}
 
 }
+
