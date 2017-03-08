@@ -12,7 +12,7 @@ public class AddMonitorQuery {
 	// Query the DB to add water quality data
 
 	public void doAdd(MonitoringPoint monitoringPoint) {
-		String query = "INSERT INTO  `MONITORING_POINT`(`SITE_NAME`,`SITE_POINT`,`LOCATION_LATITUDE`,`LOCATION_LONGITUDE`,`DESCRIPTION`,`SITE_USE`)values (?,?,?,?,?,?)";
+		String query = "INSERT INTO  `monitoring_point`(`SITE_NAME`,`SITE_POINT`,`LOCATION_LATITUDE`,`LOCATION_LONGITUDE`,`DESCRIPTION`,`SITE_USE`)values (?,?,?,?,?,?)";
 
 		Connection connection = ConnectionBuilder.connect();
 		try {
