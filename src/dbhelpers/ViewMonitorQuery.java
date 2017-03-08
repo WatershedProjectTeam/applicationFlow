@@ -20,7 +20,7 @@ public class ViewMonitorQuery {
 		List<MonitoringPoint> monitoringPoints = new ArrayList<>();
 
 		Connection connection = ConnectionBuilder.connect();
-		String query = "select `SITE_NAME`,`SITE_POINT`,`LOCATION_LATITUDE`,`LOCATION_LONGITUDE`,`DESCRIPTION`,`SITE_USE` from MONITORING_POINT";
+		String query = "select `SITE_NAME`,`SITE_POINT`,`LOCATION_LATITUDE`,`LOCATION_LONGITUDE`,`DESCRIPTION`,`SITE_USE` from monitoring_point";
 
 		PreparedStatement ps = connection.prepareStatement(query);
 		ResultSet rs = ps.executeQuery();
